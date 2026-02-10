@@ -250,7 +250,7 @@ header {
 }
 
 .hero-background {
-    --bg-image: url("/images/landingpage-bg.png");
+    --bg-image: url("/images/landingpage-bg.webp");
     --bg-image-opacity: .15;
     height: 100%;
     position: relative;
@@ -317,7 +317,7 @@ ul.information-list:not(:last-of-type) {
 
 /*** Kundservice ***/
 .contact-container {
-    background-image: url("/images/help-image.png");
+    background-image: url("/images/help-image.webp");
     background-size: contain; /* Visar hela bilden */
     background-position: center;
     background-repeat: no-repeat;
@@ -693,7 +693,7 @@ footer div > :not(:last-child) {
     justify-content: center;
     align-items: center;
     gap: 4rem;
-    --bg-image: url("/dt068g/lab4.2/images/landingpage-bg.png");
+    --bg-image: url("/images/landingpage-bg.webp");
     --bg-image-opacity: .15;
     position: relative;
     isolation: isolate;
