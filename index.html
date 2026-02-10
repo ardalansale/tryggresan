@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Startsida för TryggResan">
+    <title>TryggResan</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- <a href="#main" class="visually-hidden focusable">Hoppa till innehåll</a> -->
+    <header> 
+        <nav class="wrapper navbar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/tryggresan-logo.svg" class="logo" alt="Tryggresan logo" height="857" width="58">
+                </a>
+            </div>
+
+                <!-- Hamburgarmeny -->
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="hamburger hamburger-closed">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <span>Meny</span>
+                    <span class="visually-hidden">Öppna menyn</span>
+                </label>
+                <label for="menu-toggle" class="hamburger hamburger-open">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <span>Stäng</span>
+                    <span class="visually-hidden">Stäng menyn</span>
+                </label>
+
+            <!-- Nav links -->
+            <div class="nav-links-container">
+                <ul class="navbar-links" role="list">
+                    <li><a href="index.html" class="navbar-link" aria-current="page">Startsida</a></li>
+                    <li><a href="information.html" class="navbar-link">Information</a></li>
+                    <li><a href="kundservice.html" class="navbar-link">Kundservice</a></li>
+                </ul>
+
+                <hr class="divider">
+
+                <div class="hero-buttons">
+                    <a class="primary-button" href="/dt068g/lab4.2/bokaresa.html">
+                        <i class="fa fa-car" aria-hidden="true"></i>Bosa resa
+                    </a>
+                    <a class="secondary-button" href="/dt068g/lab4.2/minabokningar.html">
+                        <i class="fa fa-user" aria-hidden="true"></i>Mina bokningar
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="wrapper hero">
+            <section class="hero-left hero-background"> <!-- Vänster sektion av Hero -->
+                <h1>Välkommen till TryggFärd</h1>
+                <div class="hero-left__text">
+                    <p>Med TryggResan kan du boka din resa i din egen takt.</p>
+                    <p>Tjänsten är skapad för att vara lätt att använda och tydlig att förstå. Du ser all viktig information innan du bekräftar din resa.</p>
+                    <span><a href="information.html" class="link">Läs mer om tjänsten</a></span>
+                </div>
+            </section>
+
+            <div class="hero-right"> <!-- Höger sektion av Hero -->
+                <div class="hero-buttons">
+                    <a class="primary-button" href="/dt068g/lab4.2/bokaresa.html">
+                        <i class="fa fa-car" aria-hidden="true"></i>Bosa resa
+                    </a>
+                    <a class="secondary-button" href="/dt068g/lab4.2/minabokningar.html">
+                        <i class="fa fa-user" aria-hidden="true"></i>Mina bokningar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="wrapper">
+            <p><strong>Telefon: </strong>08-123 45 67</p>
+            <p><strong>E-postadress: </strong><a href="mailto:info@tryggresan.se">info@tryggresan.se</a></p>
+            <p><strong>Öppettider: </strong> Mån-Lördag 06:00 - 20:00</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Informationssida för TryggResan">
+    <title>Information</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- <a href="#main" class="visually-hidden focusable">Hoppa till innehåll</a> -->
+    <header> 
+        <nav class="wrapper navbar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/tryggresan-logo.svg" class="logo" alt="Tryggresan logo" height="857" width="58">
+                </a>
+            </div>
+
+                <!-- Hamburgarmeny -->
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="hamburger hamburger-closed">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <span>Meny</span>
+                    <span class="visually-hidden">Öppna menyn</span>
+                </label>
+                <label for="menu-toggle" class="hamburger hamburger-open">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <span>Stäng</span>
+                    <span class="visually-hidden">Stäng menyn</span>
+                </label>
+
+            <!-- Nav links -->
+            <div class="nav-links-container">
+                <ul class="navbar-links" role="list">
+                    <li><a href="index.html" class="navbar-link">Startsida</a></li>
+                    <li><a href="information.html" class="navbar-link" aria-current="page">Information</a></li>
+                    <li><a href="kundservice.html" class="navbar-link">Kundservice</a></li>
+                </ul>
+
+                <hr class="divider">
+
+                <div class="hero-buttons">
+                    <a class="primary-button" href="/dt068g/lab4.2/bokaresa.html">
+                        <i class="fa fa-car" aria-hidden="true"></i>Bosa resa
+                    </a>
+                    <a class="secondary-button" href="/dt068g/lab4.2/minabokningar.html">
+                        <i class="fa fa-user" aria-hidden="true"></i>Mina bokningar
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="wrapper information">
+            <section>
+                <h1>Information</h1>
+                <div class="information-container">
+                    <div>
+                        <h2>Vad är färdtjänst?</h2>
+                        <p>Färdtjänst är ett transporttilbud för personer  med funktionsnedsättningar.</p> 
+                        <p>Du får ett antal  resor per år att använda fritt.</p>
+                    </div>
+                    <div>
+                        <h2>Hur vet jag om jag är berättigad?</h2>
+                        <p><strong>Du får färdtjänst om du:</strong></p>
+                        <ul class="information-list">
+                            <li>Är folkbokförd i Stockholm</li>
+                            <li>Har en funktionsnedsättning som varar över 3 månader</li>
+                            <li>Har svårt att förflytta dig eller resa med kollektivtrafiken</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Viktiga regler</h2>
+                        <p><strong>Du <u>MÅSTE</u>:</strong></p>
+                        <ul class="information-list">
+                            <li>Vara på plats vid överenskommen tid</li>
+                            <li>Avboka minst 30 minuter innan (70 minuter från ytterområden)</li>
+                            <li>Resa själv - du kan inte låna ut ditt kort till någon annan</li>
+                        </ul>
+                        <p><strong>Du ansvarar själv för:</strong></p>
+                        <ul class="information-list">
+                            <li>Hjälp vid framkomsten</li>
+                            <li>Att hämta och lämna dina saker</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Ledsagare</h2>
+                        <p>En ledsagare är en person som hjälper dig under resan. Barn under 7 år MÅSTE ha ledsagare. Du kan ansöka om att ta med en ledsagare gratis.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Samåkning</h2>
+                        <p>Ibland kan du resa tillsammans med andra. Det kan ta 20-30 minuter längre tid.</p>
+                    </div>
+                    <div>
+                        <h2>Vad gör jag om bilen inte kommer?</h2>
+                        <p>Om bilen inte kommer inom 20 minuter från bokad tid, ring oss på 08-123 45 67. Du får då en ny resa utan extra kostnad.</p>
+                    </div>
+                    <div>
+                        <h2>Kan jag ta med mina barn?</h2>
+                        <p>Ja, dina egna barn under 18 år kan åka med gratis.  Du måste meddela oss deras födelsedatum när du söker.</p>
+                    </div>
+                    <div>
+                        <h2>Kan jag ta med hjälpmedel?</h2>
+                        <p>Ja, du kan ta med rullstol, rollator och andra hjälpmedel. Meddela vid bokning vilka hjälpmedel du har.</p>
+                    </div>
+                    <a class="link" href="tillganglighet.html">Tillgänglighetsredogörelse</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p><strong>Telefon: </strong>08-123 45 67</p>
+            <p><strong>E-postadress: </strong><a href="mailto:info@tryggresan.se">info@tryggresan.se</a></p>
+            <p><strong>Öppettider: </strong> Mån-Lördag 06:00 - 20:00</p>
+        </div>
+    </footer>
+</body>
+</html>

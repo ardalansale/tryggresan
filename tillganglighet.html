@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tillgänglighetsredogörelse för TryggResan">
+    <title>Tillgänglighet</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- <a href="#main" class="visually-hidden focusable">Hoppa till innehåll</a> -->
+    <header> 
+        <nav class="wrapper navbar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/tryggresan-logo.svg" class="logo" alt="Tryggresan logo" height="857" width="58">
+                </a>
+            </div>
+
+                <!-- Hamburgarmeny -->
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="hamburger hamburger-closed">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <span>Meny</span>
+                    <span class="visually-hidden">Öppna menyn</span>
+                </label>
+                <label for="menu-toggle" class="hamburger hamburger-open">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <span>Stäng</span>
+                    <span class="visually-hidden">Stäng menyn</span>
+                </label>
+
+            <!-- Nav links -->
+            <div class="nav-links-container">
+                <ul class="navbar-links" role="list">
+                    <li><a href="index.html" class="navbar-link">Startsida</a></li>
+                    <li><a href="information.html" class="navbar-link" aria-current="page">Information</a></li>
+                    <li><a href="kundservice.html" class="navbar-link">Kundservice</a></li>
+                </ul>
+
+                <hr class="divider">
+
+                <div class="hero-buttons">
+                    <a class="primary-button" href="/dt068g/lab4.2/bokaresa.html">
+                        <i class="fa fa-car" aria-hidden="true"></i>Bosa resa
+                    </a>
+                    <a class="secondary-button" href="/dt068g/lab4.2/minabokningar.html">
+                        <i class="fa fa-user" aria-hidden="true"></i>Mina bokningar
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="wrapper information">
+            <section>
+                <h1>Tillgänglihet</h1>
+                <div class="information-container">
+                    <div>
+                        <h2>Om denna webbplats</h2>
+                        <p>TryggFärd är designad för att alla ska kunna använda den, oavsett funktionsförmåga. Denna sida beskriver vad vi har gjort för att göra webbplatsen tillgänglig.</p> 
+                        <p>Vi följer WCAG 2.1 Level AA - den internationella standarden för webbtillgänglighet.</p>
+                    </div>
+                    <div>
+                        <h2>Vad vi har gjort</h2>
+                        <p><strong>Visuell design</strong></p>
+                        <ul class="information-list">
+                            <li>Stor text: Minsta storlek är 16px för att läsas lätt</li>
+                            <li>Höga färgkontraster: Text och bakgrund har tillräcklig kontrast (mörkgrå på vit, mörkblå på vit)</li>
+                            <li>Tydliga typsnitt: Sans-serif font för bättre läsbarhet</li>
+                            <li>Responsiv: Webbplatsen fungerar på mobil, tablet och desktop</li>
+                        </ul>
+                        <p><strong>Navigering</strong></p>
+                        <ul class="information-list">
+                            <li>Semantisk HTML: Vi använder rätt HTML-tags (header, nav, main, footer) så skärmläsare förstår strukturen</li>
+                            <li>Tangentbordsnavigering: Hela webbplatsen kan användas med enbart tangentbord</li>
+                            <li>Tydlig fokus: Alla knappar och länkar visar var du är när du tabbar mellan dem</li>
+                            <li>Hamburgaremeny: Enkel meny för mobil</li>
+                        </ul>
+                        <p><strong>Formulär</strong></p>
+                        <ul class="information-list">
+                            <li>Etiketter: Varje formulär-fält har en tydlig etikett</li>
+                            <li>Stora fält: Alla input-fält är minst 44x44 pixlar - lätt att klicka</li>
+                            <li>Obligatoriska fält: Markerade med röd stjärna och tydlig text</li>
+                            <li>Instruktioner: Tydlig vägledning för vad man ska göra</li>
+                        </ul>
+                        <p><strong>Bilder & innehål</strong></p>
+                        <ul class="information-list">
+                            <li>Alt-text: Alla bilder har beskrivande text för skärmläsare</li>
+                            <li>Inte bara färg: Information förmedlas inte genom färg enbart</li>
+                            <li>Enkelt språk: Korta meningar och stycken</li>
+                        </ul>
+                        <p><strong>Testning</strong></p>
+                        <ul class="information-list">
+                            <li>Lighthouse audit: Accessibility score 96/100</li>
+                            <li>Keyboard testing: Testad att navigera med enbart tangentbord</li>
+                            <li>Olika webbläsare: Testad på Chrome, Firefox, Safari och Edge</li>
+                        </ul>
+                        <p><strong>Vad vi kan förbättra</strong></p>
+                        <ul class="information-list">
+                            <li>Möjlighet att välja högkontrastläge</li>
+                            <li>Skärmläsare-testning</li>
+                            <li>Ännu mer instruktioner och beskrivande text för att förenkla använding av tjänsten</li>
+                        </ul>
+
+                    </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p><strong>Telefon: </strong>08-123 45 67</p>
+            <p><strong>E-postadress: </strong><a href="mailto:info@tryggresan.se">info@tryggresan.se</a></p>
+            <p><strong>Öppettider: </strong> Mån-Lördag 06:00 - 20:00</p>
+        </div>
+    </footer>
+</body>
+</html>

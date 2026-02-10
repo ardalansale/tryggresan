@@ -1,0 +1,858 @@
+/*** Design system ***/
+
+:root {
+    --clr-black: hsl(0, 0%, 8%); /* Text */
+    --clr-blue: hsl(233, 100%, 51%); /* Länkar och knappar */
+    --clr-lightblue: hsl(214, 100%, 70%);
+    --clr-verylightblue: hsl(214, 100%, 90%); /* Footer */
+    --clr-darkblue: hsl(248, 100%, 12%); /* Knapp (Boka Resa) */
+    --clr-white: hsl(45, 100%, 98%); /* Bakgrundsfärg */
+    --clr-green: hsl(134, 100%, 19%); /* Succes-färg */
+    --clr-red: hsl(354, 70%, 54%); /* Error-färg */
+    --clr-darkgrey: hsl(0, 0%, 34%); /* Aktiv sida */
+
+    --radius-xl: 1.25rem;
+    --radius-l: 0.75rem;
+    --radius-m: 0.5rem;
+    --radius-s: 0.25rem;
+
+    --border: 0.125rem;
+
+    --gap-l: 1.25rem;
+
+    --button-border: 0.125rem;
+}
+
+.link {
+    color: var(--clr-blue);
+}
+
+.link:hover {
+    color: rgb(0, 59, 196);
+    text-decoration: underline;
+}
+
+.primary-button,
+.secondary-button,
+.primary-button-alt {
+    border-radius: var(--radius-m);
+    height: 55px;
+    width: 400px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.primary-button,
+.primary-button-alt {
+    background-color: var(--clr-darkblue);
+    color: white;
+    border: 0;
+}
+
+.secondary-button {
+    background-color: var(--clr-white);
+    color: var(--clr-darkblue);
+    border: var(--button-border) solid var(--clr-darkblue);
+}
+
+.primary-button:focus,
+.primary-button-alt:focus,
+.secondary-button:focus,
+.cancel-btn:focus,
+.change-btn:focus,
+.book-cancel-btn:focus,
+.book-confirm-btn:focus {
+    outline: 3px solid hsl(210, 90%, 56%);
+    outline-offset: 2px;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.primary-button-alt:hover,
+.book-cancel-btn:hover,
+.book-confirm-btn:hover,
+.cancel-btn:hover,
+.change-btn:hover {
+    box-shadow: hsla(0, 0%, 47%, 0.602) 0.125rem 0.2rem 0.5rem;
+}
+
+
+i { 
+    margin-right: 0.5rem; /* Ikoner  inom knapparna */
+}
+
+/* === Ardalans CSS-bas — Minimal Startmall === */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: verdana, system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background: var(--clr-white);
+    color: var(--clr-black);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex; /* Centrera innehåll */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+}
+
+h1 {
+    font-family: "Abril Fatface", verdana, sans-serif;
+    font-size: 2.5rem; /* 40px */
+}
+
+header {
+    /* outline: var(--border) solid rgb(85, 173, 255); */
+    box-shadow: 10px 2px 10px 5px rgba(154, 154, 154, 0.482);
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    color: black;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid hsl(210 90% 56%);
+    outline-offset: 4px;
+} */
+
+/*** Navbar ***/
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8.75rem; /* 140px */
+    position: relative;
+}
+
+/* Navbar links */
+.navbar-links {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem; /* 40px */
+    font-weight: 600;
+}
+
+.navbar-link {
+    border: solid 0.125rem var(--black-clr);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-s);
+}
+
+.navbar-links a[aria-current="page"] {
+    color: var(--clr-darkgrey);
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 5rem;
+}
+
+/* Navbar - Hamburgermeny (göm i desktop-vy) */
+
+.menu-toggle {
+    display: none; /* Göm checkbox */
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger--open {
+    display: none;
+}
+
+.nav-links-container .hero-buttons {
+    display: none;
+}
+
+.divider {
+    display:none
+}
+
+/*** Hero ***/
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* flex: 1; Tar upp hela höjden mellan Header och footer */
+}
+
+.hero-left,
+.hero-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* padding: 2rem; */
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero-left {
+    gap: var(--gap-l);
+}
+
+.hero-left__text {
+    max-width: 40ch;
+    font-size: 1.125rem;
+}
+
+.hero-left__text > :not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.hero-background {
+    --bg-image: url("/dt068g/lab4.2/images/landingpage-bg.png");
+    --bg-image-opacity: .15;
+    height: 100%;
+    position: relative;
+    isolation: isolate;
+}
+
+.hero-background::after {
+    content: ''; /* Ett måste när man använder ::after */
+    position: absolute;
+    inset: 0; /* Tar upp hela utrymmet */
+    z-index: -1; /* Flyttar den bak */
+    background: white;
+    opacity: var(--bg-image-opacity);
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 1.5rem;
+}
+
+/*** Information ***/
+
+.information-list {
+    margin: auto;
+}
+
+ul.information-list:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7rem;
+}
+
+.information-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2.5rem;
+    flex: 1; /* Tar upp hela höjden mellan Header och footer */
+    max-width: 75ch;
+    border: var(--border) solid rgb(107, 107, 107);
+    border-radius: var(--radius-m);
+    padding: 2.5rem;
+    margin-bottom: 10rem;
+}
+
+.information h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.information-container h2 {
+    margin-bottom: 1rem;
+}
+
+/*** Kundservice ***/
+.contact-container {
+    background-image: url("/dt068g/lab4.2/images/help-image.png");
+    background-size: contain; /* Visar hela bilden */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* min-height: 400px; */
+    /* width: max-content; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 6rem;
+}
+
+.contact-container h3 {
+    /* color: var(--clr-lightblue); */
+    color: rgb(0, 80, 209);
+}
+
+.contact-container__contact > :not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+/*** Mina Bokningar ***/
+
+.bookings {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1; /* Tar upp hela höjden mellan Header och footer */
+    max-width: 75ch;
+    margin-bottom: 10rem;
+}
+
+.bookings h1,
+.book-trip h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.booking {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 40rem;
+    /* gap: 2.5rem; */
+    /* max-width: 75ch; */
+    border: var(--border) solid var(--clr-lightblue);
+    border-radius: var(--radius-m);
+    padding: 2.5rem;
+    background-color: white;
+}
+
+.booking span {
+    margin-bottom: 1rem;
+    color: var(--clr-darkgrey);
+}
+
+.booking h2 {
+    margin-bottom: 1rem;
+}
+
+.booking__info p {
+    margin-top: 0.5rem;
+}
+
+.booking__buttons {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cancel-btn,
+.change-btn {
+    border-radius: var(--radius-m);
+    height: 55px;
+    width: 12rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.cancel-btn {
+    color: var(--clr-red);
+    border: var(--button-border) var(--clr-red) solid;
+}
+
+.change-btn {
+    color: var(--clr-blue);
+    border: var(--button-border) solid var(--clr-blue);
+
+}
+
+/* .cancel-btn:hover {
+    box-shadow: var(--clr-red) 0.125rem 0.2rem 0.5rem;
+} 
+
+.change-btn:hover {
+    box-shadow: var(--clr-blue) 0.125rem 0.2rem 0.5rem;
+}  */
+
+.primary-button-alt {
+    margin-top: 2rem;
+    width: 40rem;
+}
+
+/*** Boka resa ***/
+
+.book-trip {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1; /* Tar upp hela höjden mellan Header och footer */
+    margin-bottom: 10rem;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: var(--border) solid var(--clr-blue);
+    border-radius: var(--radius-m);
+    padding: 2.5rem;
+    background-color: white;
+    min-width: 50%;
+}
+
+.booking-form span {
+    display: inline;
+    color: red;
+    margin-left: 0.125rem;
+}
+
+.booking-form textarea,
+.booking-form input {
+    display: block;
+    resize: none;
+    width: 100%;
+}
+
+
+.booking-form label:first-child {
+    display: inline-block;  /* Endast 'inline' ignoreras av margin-top och margin-bottom */
+    margin-bottom: 0.5rem;
+}
+
+.booking-form ::placeholder {
+    padding-left: 0.5rem;
+}
+
+.booking-form :where(.recurring-frequency__options, .recurring-trip__options) input {
+    display: inline-block;
+    width: auto;
+}
+
+.recurring-frequency__options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.book-trip-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.book-trip-buttons button {
+    flex: 1;
+    /* width: 100%; */
+}
+
+.book-cancel-btn,
+.book-confirm-btn {
+    border-radius: var(--radius-m);
+    height: 55px;
+    width: 50%;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.book-cancel-btn {
+    color: var(--clr-black);
+    border: var(--button-border) var(--clr-black) solid;
+    background-color: transparent;
+}
+
+.book-confirm-btn {
+    color: var(--clr-white);
+    background-color: var(--clr-blue);
+    border: var(--button-border) solid var(--clr-blue);
+}
+
+/*** Klar ***/
+
+.confirmation {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1; /* Tar upp hela höjden mellan Header och footer */
+    max-width: 75ch;
+    margin-bottom: 10rem;
+}
+
+.confirmation h1, span {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--clr-green);
+}
+
+.confirmation-container {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    border: var(--border) solid var(--clr-green);
+    border-radius: var(--radius-m);
+    padding: 2.5rem;
+    background-color: transparent;
+}
+
+.confirmation__buttons {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 100%;
+}
+
+.confirmation__buttons a {
+    width: 40%;
+}
+
+.confirmation-container .booking__info {
+    align-self: center;
+}
+
+/*** Footer ***/
+
+footer {
+    display: grid;
+    flex-direction: row;
+    place-content: center;
+    min-height: 10rem;
+    background-color: var(--clr-verylightblue);
+    outline: var(--border) solid rgb(85, 173, 255);
+}
+
+footer div > :not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+/*** TABLET ***/
+@media (max-width: 912px) {
+
+    /*** NAVBAR ***/
+    /* Dölj vanliga navbar på mindre skärmar */
+
+    .navbar-links a[aria-current="page"] {
+    color: var(--clr-black);
+    }
+
+    .nav-links-container {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        display: none; /* Gömd som standard */
+        z-index: 1;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        font-size: 2rem;
+    }
+
+    .hamburger span {
+        font-size: 1rem;
+        color: black;
+    }
+
+    .hamburger i {
+    margin-right: 0;
+    }
+
+    .hamburger-closed {
+        display: flex;
+        flex-direction: column;
+        place-self: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        color: var(--clr-black);
+    }
+/* 
+    .hamburger-closed:hover {
+        color: var(--clr-blue);
+    } */
+
+    .hamburger-open {
+        display: none;
+    }
+
+    .hamburger-closed i,
+    .hamburger-open i {
+        font-size: 3rem;
+    }
+
+    .menu-toggle:checked ~ .nav-links-container {
+        display: block;
+    }
+
+    .menu-toggle:checked ~ .hamburger-closed {
+        display: none;
+    }
+
+    .menu-toggle:checked ~ .hamburger-open {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        cursor: pointer;
+        color: var(--clr-black);
+        align-items: center;
+    }
+
+    body:has(.menu-toggle:checked) main {
+        filter: blur(4px) grayscale(100%) brightness(0.9);
+        pointer-events: none;
+    }
+
+    .nav-links-container .hero-buttons {
+        display: flex;
+        justify-self: center;
+        gap: 1.5rem;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .nav-links-container .hero-buttons a {
+        width: 500px;
+    }
+
+    .nav-links-container .secondary-button {
+        background-color: transparent;
+    }
+
+    .divider {
+        display: flex;
+        border: solid rgb(210, 210, 210) var(--border);
+        border-radius: var(--radius-l)
+    }
+
+
+    /*** Hero ***/
+    .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    --bg-image: url("/dt068g/lab4.2/images/landingpage-bg.png");
+    --bg-image-opacity: .15;
+    position: relative;
+    isolation: isolate;
+    }
+
+    .hero::after {
+    content: ''; /* Ett måste när man använder ::after */
+    position: absolute;
+    inset: 0; /* Tar upp hela utrymmet */
+    z-index: -1; /* Flyttar den bak */
+    background: white;
+    opacity: var(--bg-image-opacity);
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .hero-background::after  {
+        display: none;
+    }
+
+    /*** Information ***/
+
+    .information {
+    margin-top: 4rem;
+    }
+    
+    .information-container {
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 6rem;
+    }
+
+    /*** Boka resa ***/
+
+    form {
+        min-width: 80%;
+    }
+    .book-trip {
+        margin-top: 4rem;
+    }
+    
+    .book-trip-buttons {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .book-cancel-btn,
+    .book-confirm-btn {
+        border-radius: var(--radius-m);
+        width: 100%;
+    }
+
+    .book-trip-buttons button {
+        flex: none;
+    }
+
+    /*** Mina Bokningar ***/
+
+    .bookings {
+        margin-top: 4rem;
+    }
+
+    /*** Klar ***/
+
+    .confirmation {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+}
+
+/*** Mobile ***/
+/* @media (max-width: 430px)  */
+@media (max-width: 643px) {
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+        
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /*** Navbar ***/
+
+    .nav-links-container .hero-buttons a {
+        width: 350px;
+    }
+
+    /*** Hero ***/
+
+    .hero-left__text {
+        font-size: 1rem;
+    }
+
+    /*** Information ***/
+
+    .information-container {
+        padding: 1rem;
+        gap: 2.5rem;
+    }
+
+    /*** Kundservice ***/
+    .contact-container {
+        background-image: none;
+        text-align: center;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    /*** Mina Bokningar ***/
+    .bookings {
+        margin-bottom: 16rem;
+        padding: 0.5rem;
+    }
+
+    .booking {
+    flex-direction: column;
+    width: fit-content;
+    padding: 1.5rem;
+    }
+
+    .booking__buttons {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    }
+
+    .cancel-btn,
+    .change-btn {
+    width: 100%;
+    }
+
+    .primary-button-alt {
+        width: 29rem;
+    }
+
+    /** Klar **/
+
+    .confirmation-container {
+    width: 30rem;
+    padding: 2rem;
+    }
+
+    .confirmation__buttons {
+    flex-direction: column-reverse;
+    gap: 1.5rem
+    }
+
+    .confirmation__buttons a {
+    width: 100%;
+}
+
+}
+
