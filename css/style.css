@@ -445,7 +445,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border: var(--border) solid var(--clr-blue);
+    border: var(--border) solid rgb(107, 107, 107);
     border-radius: var(--radius-m);
     padding: 2.5rem;
     background-color: white;
