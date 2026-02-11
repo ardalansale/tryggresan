@@ -416,7 +416,7 @@ form {
     border-radius: var(--radius-m);
     padding: 2rem;
     background-color: white;
-    min-width: 50%;
+    min-width: 100;
 }
 
 .booking-form span {
@@ -789,7 +789,7 @@ footer div > :not(:last-child) {
 
     /*** Boka resa ***/
     form {
-        padding: 1.2rem;
+        padding: 1.4rem;
     }
 
 
