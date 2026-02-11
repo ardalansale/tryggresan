@@ -104,7 +104,8 @@ body {
 
 main {
     flex: 1;
-    display: flex; /* Centrera innehåll */
+    display: flex; /* Centrera innehåll */ /* NY */
+    align-items: stretch;
 }
 
 a {
@@ -141,30 +142,13 @@ header {
     border: 0;
 }
 
-/* .skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    background: white;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.25rem;
-    color: black;
-    z-index: 1000;
-}
-
-.skip-link:focus {
-    top: 0;
-    outline: 3px solid hsl(210 90% 56%);
-    outline-offset: 4px;
-} */
-
 /*** Navbar ***/
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 8.75rem; /* 140px */
+    height: 7rem;
     position: relative;
 }
 
@@ -172,7 +156,7 @@ header {
 .navbar-links {
     display: flex;
     flex-direction: row;
-    gap: 2.5rem; /* 40px */
+    gap: 2.5rem;
     font-weight: 600;
 }
 
@@ -191,7 +175,7 @@ header {
 }
 
 .logo {
-    width: 5rem;
+    width: 4rem;
 }
 
 /* Navbar - Hamburgermeny (göm i desktop-vy) */
@@ -222,7 +206,7 @@ header {
     display: flex;
     flex-direction: row;
     width: 100%;
-    /* flex: 1; Tar upp hela höjden mellan Header och footer */
+    min-height: calc(100vh - 7rem);
 }
 
 .hero-left,
@@ -233,7 +217,7 @@ header {
     /* padding: 2rem; */
     align-items: center;
     justify-content: center;
-    height: 100%;
+    flex: 1; /* NY */
 }
 
 .hero-left {
@@ -298,7 +282,7 @@ ul.information-list:not(:last-of-type) {
     flex-direction: column;
     width: 100%;
     gap: 2.5rem;
-    flex: 1; /* Tar upp hela höjden mellan Header och footer */
+    flex: 1;
     max-width: 75ch;
     border: var(--border) solid rgb(107, 107, 107);
     border-radius: var(--radius-m);
@@ -321,8 +305,6 @@ ul.information-list:not(:last-of-type) {
     background-size: contain; /* Visar hela bilden */
     background-position: center;
     background-repeat: no-repeat;
-    /* min-height: 400px; */
-    /* width: max-content; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -331,7 +313,6 @@ ul.information-list:not(:last-of-type) {
 }
 
 .contact-container h3 {
-    /* color: var(--clr-lightblue); */
     color: rgb(0, 80, 209);
 }
 
@@ -347,7 +328,7 @@ ul.information-list:not(:last-of-type) {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    flex: 1; /* Tar upp hela höjden mellan Header och footer */
+    flex: 1;
     max-width: 75ch;
     margin-bottom: 10rem;
 }
@@ -361,10 +342,7 @@ ul.information-list:not(:last-of-type) {
 .booking {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     width: 40rem;
-    /* gap: 2.5rem; */
-    /* max-width: 75ch; */
     border: var(--border) solid var(--clr-lightblue);
     border-radius: var(--radius-m);
     padding: 2.5rem;
@@ -416,14 +394,6 @@ ul.information-list:not(:last-of-type) {
 
 }
 
-/* .cancel-btn:hover {
-    box-shadow: var(--clr-red) 0.125rem 0.2rem 0.5rem;
-} 
-
-.change-btn:hover {
-    box-shadow: var(--clr-blue) 0.125rem 0.2rem 0.5rem;
-}  */
-
 .primary-button-alt {
     margin-top: 2rem;
     width: 40rem;
@@ -436,7 +406,7 @@ ul.information-list:not(:last-of-type) {
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex: 1; /* Tar upp hela höjden mellan Header och footer */
+    flex: 1;
     margin-bottom: 10rem;
     align-items: center;
 }
@@ -447,7 +417,7 @@ form {
     gap: 2rem;
     border: var(--border) solid rgb(107, 107, 107);
     border-radius: var(--radius-m);
-    padding: 2.5rem;
+    padding: 2rem;
     background-color: white;
     min-width: 50%;
 }
@@ -530,7 +500,7 @@ form {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    flex: 1; /* Tar upp hela höjden mellan Header och footer */
+    flex: 1;
     max-width: 75ch;
     margin-bottom: 10rem;
 }
@@ -583,7 +553,7 @@ footer div > :not(:last-child) {
 }
 
 /*** TABLET ***/
-@media (max-width: 912px) {
+@media (max-width: 1088px) {
 
     /*** NAVBAR ***/
     /* Dölj vanliga navbar på mindre skärmar */
@@ -628,10 +598,6 @@ footer div > :not(:last-child) {
         cursor: pointer;
         color: var(--clr-black);
     }
-/* 
-    .hamburger-closed:hover {
-        color: var(--clr-blue);
-    } */
 
     .hamburger-open {
         display: none;
@@ -686,17 +652,19 @@ footer div > :not(:last-child) {
         border-radius: var(--radius-l)
     }
 
-
     /*** Hero ***/
     .hero {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    min-height: auto;       
+    gap: 2rem;
     --bg-image: url("/images/landingpage-bg.webp");
     --bg-image-opacity: .15;
     position: relative;
     isolation: isolate;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     }
 
     .hero::after {
@@ -713,8 +681,11 @@ footer div > :not(:last-child) {
 
     .hero-left,
     .hero-right {
-        width: 100%;
-        height: fit-content;
+        min-width: 100%;
+        flex: none;         
+        height: auto;
+        min-height: revert;   
+        padding: 0;
     }
 
     .hero-background::after  {
@@ -738,6 +709,7 @@ footer div > :not(:last-child) {
     form {
         min-width: 80%;
     }
+    
     .book-trip {
         margin-top: 4rem;
     }
@@ -772,8 +744,7 @@ footer div > :not(:last-child) {
 
 }
 
-/*** Mobile ***/
-/* @media (max-width: 430px)  */
+/*** MOBILE ***/
 @media (max-width: 643px) {
     
     h1 {
@@ -812,6 +783,12 @@ footer div > :not(:last-child) {
         gap: 2rem;
     }
 
+    /*** Boka resa ***/
+    form {
+        padding: 1.5rem;
+    }
+
+
     /*** Mina Bokningar ***/
     .bookings {
         margin-bottom: 16rem;
@@ -834,8 +811,10 @@ footer div > :not(:last-child) {
     width: 100%;
     }
 
+    .primary-button,
+    .secondary-button,
     .primary-button-alt {
-        width: 29rem;
+        width: 20rem;
     }
 
     /** Klar **/
@@ -852,7 +831,7 @@ footer div > :not(:last-child) {
 
     .confirmation__buttons a {
     width: 100%;
-}
+    }
 
 }
 
