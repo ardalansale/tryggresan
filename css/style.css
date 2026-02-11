@@ -267,6 +267,7 @@ header {
     background-image: var(--bg-image);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-buttons {
@@ -607,7 +608,7 @@ footer div > :not(:last-child) {
     .navbar-links {
         flex-direction: column;
         align-items: center;
-        gap: 3rem;
+        gap: 2rem;
         font-size: 2rem;
     }
 
@@ -668,8 +669,8 @@ footer div > :not(:last-child) {
         display: flex;
         justify-self: center;
         gap: 1.5rem;
-        margin-top: 4rem;
-        margin-bottom: 4rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 
     .nav-links-container .hero-buttons a {
@@ -777,7 +778,11 @@ footer div > :not(:last-child) {
 @media (max-width: 643px) {
     
     h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
     }
 
         
@@ -796,6 +801,12 @@ footer div > :not(:last-child) {
     .hero-left__text {
         font-size: 1rem;
     }
+
+    .primary-button,
+    .secondary-button,
+    .primary-button-alt {
+        width: 20rem;
+}
 
     /*** Information ***/
 
@@ -834,9 +845,9 @@ footer div > :not(:last-child) {
     width: 100%;
     }
 
-    .primary-button-alt {
+    /* .primary-button-alt {
         width: 29rem;
-    }
+    } */
 
     /** Klar **/
 
