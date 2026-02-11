@@ -757,7 +757,7 @@ footer div > :not(:last-child) {
     /*** Navbar ***/
 
     .nav-links-container .hero-buttons a {
-        width: 350px;
+        width: 310px;
     }
 
     /*** Hero ***/
@@ -789,7 +789,7 @@ footer div > :not(:last-child) {
 
     /*** Boka resa ***/
     form {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
 
