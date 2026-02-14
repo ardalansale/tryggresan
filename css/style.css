@@ -419,7 +419,7 @@ form {
     border-radius: var(--radius-m);
     padding: 2rem;
     background-color: white;
-    min-width: 100;
+    min-width: 100%;
 }
 
 .booking-form span {
