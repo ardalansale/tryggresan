@@ -422,6 +422,13 @@ form {
     min-width: 100%;
 }
 
+.hint {
+    font-size: 0.85rem;
+    color: var(--clr-darkgrey);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
 .booking-form span {
     display: inline;
     color: red;
