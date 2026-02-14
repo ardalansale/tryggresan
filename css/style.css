@@ -5,10 +5,11 @@
     --clr-lightblue: hsl(214, 100%, 70%);
     --clr-verylightblue: hsl(214, 100%, 90%); /* Footer */
     --clr-darkblue: hsl(248, 100%, 12%); /* Knapp (Boka Resa) */
+    --color-darkblue-2: rgb(0, 61, 152); /* För aktiv-state i navbar */
     --clr-white: hsl(45, 100%, 98%); /* Bakgrundsfärg */
     --clr-green: hsl(134, 100%, 19%); /* Succes-färg */
     --clr-red: hsl(354, 70%, 54%); /* Error-färg */
-    --clr-darkgrey: hsl(0, 0%, 34%); /* Aktiv sida */
+    --clr-darkgrey: hsl(0, 0%, 34%);
 
     --radius-xl: 1.25rem;
     --radius-l: 0.75rem;
@@ -165,7 +166,9 @@ header {
 }
 
 .navbar-links a[aria-current="page"] {
-    color: var(--clr-darkgrey);
+    color: var(--clr-dark-blue-2);
+    color: rgb(0, 61, 152);
+    text-decoration: underline;
 }
 
 .navbar-links a:hover {
