@@ -39,11 +39,13 @@
             <div class="nav-links-container">
                 <ul class="navbar-links" role="list">
                     <li><a href="index.html" class="navbar-link">Startsida</a></li>
+                    <li><a href="bokaresa.html" class="navbar-link" aria-current="page">Boka Resa</a></li>
+                    <li><a href="minabokningar.html" class="navbar-link">Mina Bokningar</a></li>
                     <li><a href="information.html" class="navbar-link">Information</a></li>
                     <li><a href="kundservice.html" class="navbar-link">Kundservice</a></li>
                 </ul>
 
-                <hr class="divider">
+                <!-- <hr class="divider">
 
                 <div class="hero-buttons">
                     <a class="primary-button" href="bokaresa.html">
@@ -52,76 +54,121 @@
                     <a class="secondary-button" href="minabokningar.html">
                         <i class="fa fa-user" aria-hidden="true"></i>Mina bokningar
                     </a>
-                </div>
+                </div> -->
             </div>
         </nav>
     </header>
     
     <main id="main">
         <section class="wrapper book-trip">
-            <h1>Boka Resa</h1>
-            <form name="book-trip" action="bokningklar.html" method="get" class="booking-form">
-                <div> <!-- Namn -->
-                    <label for="name">Namn</label>
-                    <input id="name" type="text" value="" name="name" placeholder="Reza Amini" readonly>
+    <h1>Boka Resa</h1>
+    <form name="book-trip" action="bokningklar.html" method="get" class="booking-form">
+        <div> <!-- Namn -->
+            <label for="name"><strong>Namn</strong></label>
+            <input id="name" type="text" value="Reza Amini" name="name" placeholder="Reza Amini" readonly>
+        </div>
+        
+        <div> <!-- Från -->
+            <label for="address-from"><strong>Hämtningsadress</strong></label><span>*</span>
+            <input id="address-from" type="text" value="" name="address-from" placeholder="Varifrån vill du åka?" required>
+        </div>
+        
+        <div> <!-- Till -->
+            <label for="address-to"><strong>Till</strong></label><span>*</span>
+            <input id="address-to" type="text" value="" name="address-to" placeholder="Var vill du resa?" required>
+        </div>
+        
+        <div> <!-- Välj dag -->
+            <label for="date-picker"><strong>Välj dag</strong></label><span>*</span>
+            <input id="date-picker" type="date" value="" name="date-picker" required>
+        </div>
+        
+        <div> <!-- Välj tid -->
+            <label for="time-picker"><strong>Välj tid</strong></label><span>*</span>
+            <input id="time-picker" type="time" value="" name="time-picker" required>
+        </div>
+        
+        <!-- Återkommande resa -->
+        <fieldset>
+            <legend>Är detta en återkommande resa?<span>*</span></legend>
+            <div class="recurring-trip__options">
+                <div>
+                    <input id="recurring-trip-no" type="radio" value="no" name="recurring-trip" checked>
+                    <label for="recurring-trip-no">Nej</label>
                 </div>
-                <div> <!-- Från -->
-                    <label for="address-from">Hämtningsadress</label><span>*</span>
-                    <input id="address-from" type="text" value="" name="address-from" placeholder="Varifrån vill du åka?" required>
+                <div>
+                    <input id="recurring-trip-yes" type="radio" value="yes" name="recurring-trip">
+                    <label for="recurring-trip-yes">Ja</label>
                 </div>
-                <div> <!-- Till -->
-                    <label for="address-to">Till</label><span>*</span>
-                    <input id="address-to" type="text" value="" name="address-to" placeholder="Var vill du resa?" required>
+            </div>
+        </fieldset>
+        
+        <!-- Hur ofta -->
+        <fieldset>
+            <legend>Om "Ja" hur ofta vill du boka?</legend>
+            <div class="recurring-frequency__options">
+                <div>
+                    <input id="recurring-frequency-weekly" type="radio" value="weekly" name="recurring-frequency">
+                    <label for="recurring-frequency-weekly">En gång i veckan</label>
                 </div>
-                <div> <!-- Välj dag -->
-                    <label for="date-picker">Välj dag</label><span>*</span>
-                    <input id="date-picker" type="date" value="" name="date-picker" required>
+                <div>
+                    <input id="recurring-frequency-fortnight" type="radio" value="fortnight" name="recurring-frequency">
+                    <label for="recurring-frequency-fortnight">Varannan vecka</label>
                 </div>
-                <div> <!-- Välj tid -->
-                    <label for="time-picker">Välj tid</label><span>*</span>
-                    <input id="time-picker" type="time" value="" name="time-picker" required>
+                <div>
+                    <input id="recurring-frequency-monthly" type="radio" value="monthly" name="recurring-frequency">
+                    <label for="recurring-frequency-monthly">En gång i månaden</label>
                 </div>
-                <div> <!-- Återkommmande resa -->
-                    <label>Är detta en återkommande resa?</label><span>*</span>
-                    <div class="recurring-trip__options">
-                        <input id="recurring-trip-no" type="radio" value="no" name="recurring-trip" checked="checked">
-                        <label for="recurring-trip-no">Nej</label>
-                        <input id="recurring-trip-yes" type="radio" value="yes" name="recurring-trip">
-                        <label for="recurring-trip-yes">Ja</label>
-                    </div>
+            </div>
+        </fieldset>
+        
+        <div> <!-- Välj till när -->
+            <label for="recurring-frequency-until"><strong>Om "Ja" till och med vilket datum?</strong></label>
+            <input id="recurring-frequency-until" type="date" value="" name="recurring-frequency-until">
+        </div>
+        
+        <!-- Särskilda behov -->
+        <fieldset>
+            <legend>Har du några särskilda behov?</legend>
+            <small>Välj alla alternativ som gäller för din resa</small>
+            <div class="special-needs">
+                <div>
+                    <input type="checkbox" id="wheelchair" name="needs" value="wheelchair">
+                    <label for="wheelchair">Rullstolsanpassad bil</label>
                 </div>
-                <div> <!-- Hur ofta -->
-                    <label>Om "Ja" hur ofta vill du boka?</label>
-                    <div class="recurring-frequency__options">
-                        <div>
-                            <input id="recurring-frequency-weekly" type="radio" value="weekly" name="recurring-frequency">
-                            <label for="recurring-frequency-weekly">En gång i veckan</label>
-                        </div>
-                        <div>
-                            <input id="recurring-frequency-fortnight" type="radio" value="fortnight" name="recurring-frequency">
-                            <label for="recurring-frequency-fortnight">Varannan vecka</label>
-                        </div>
-                        <div>
-                            <input id="recurring-frequency-monthly" type="radio" value="monthly" name="recurring-frequency">
-                            <label for="recurring-frequency-monthly">En gång i månaden</label>
-                        </div>
-                    </div>
+                <div>
+                    <input type="checkbox" id="companion" name="needs" value="companion">
+                    <label for="companion">Ledsagare</label>
                 </div>
-                
-                <div> <!-- Välj till när -->
-                    <label for="recurring-frequency-until">Om "Ja" till och med vilket datum?</label>
-                    <input id="recurring-frequency-until" type="date" value="" name="recurring-frequency-until">
+                <div>
+                    <input type="checkbox" id="service-dog" name="needs" value="service-dog">
+                    <label for="service-dog">Guidehund/servicehund</label>
                 </div>
-                <div> <!-- Meddelande -->
-                    <label for="message">Finns något vi bör veta?</label>
-                    <textarea id="message" name="message" rows="5" cols="33" placeholder="Skriv ditt meddelande här.."></textarea>
+                <div>
+                    <input type="checkbox" id="child-seat" name="needs" value="child-seat">
+                    <label for="child-seat">Barnstol</label>
                 </div>
-                <div class="book-trip-buttons">
-                    <button type="reset" class="book-cancel-btn">Avbryt</button>
-                    <a class="book-confirm-btn" href="klar.html">Bekräfta bokning</a>
+                <div>
+                    <input type="checkbox" id="boarding-help" name="needs" value="boarding-help">
+                    <label for="boarding-help">Hjälp vid på-/avstigning</label>
                 </div>
-            </form>
-        </section>
+                <div>
+                    <input type="checkbox" id="equipment" name="needs" value="equipment">
+                    <label for="equipment">Extra utrymme för utrustning</label>
+                </div> 
+        </div>
+        </fieldset>
+        <div> <!-- Meddelande -->
+            <label for="message"><strong>Finns något vi bör veta?</strong></label>
+            <textarea id="message" name="message" rows="5" cols="33" placeholder="Skriv ditt meddelande här.."></textarea>
+        </div>
+        
+        <div class="book-trip-buttons">
+            <button type="reset" class="book-cancel-btn">Återställ</button>
+            <button type="submit" class="book-confirm-btn">Bekräfta bokning</button>
+        </div>
+    </form>
+</section>
     </main>
     
     <footer>

@@ -82,7 +82,7 @@
 
 
 i { 
-    margin-right: 0.5rem; /* Ikoner  inom knapparna */
+    margin-right: 0.5rem; /* Ikoner inom knapparna */
 }
 
 /* === Ardalans CSS-bas — Minimal Startmall === */
@@ -104,7 +104,7 @@ body {
 
 main {
     flex: 1;
-    display: flex; /* Centrera innehåll */ /* NY */
+    display: flex;
     align-items: stretch;
 }
 
@@ -116,7 +116,7 @@ a {
 
 h1 {
     font-family: "Abril Fatface", verdana, sans-serif;
-    font-size: 2.5rem; /* 40px */
+    font-size: 2.5rem;
 }
 
 header {
@@ -282,7 +282,7 @@ ul.information-list:not(:last-of-type) {
     flex-direction: column;
     width: 100%;
     gap: 2.5rem;
-    flex: 1; /* Tar upp hela höjden mellan Header och footer */
+    flex: 1;
     max-width: 75ch;
     border: var(--border) solid rgb(107, 107, 107);
     border-radius: var(--radius-m);
@@ -433,8 +433,26 @@ form {
     display: block;
     resize: none;
     width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radius-s);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
 }
 
+.booking-form input:focus,
+.booking-form textarea:focus {
+    outline: none;
+    border-color: var(--clr-blue);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+.booking-form label {
+    font-weight: 500;
+    color: var(--clr-black);
+    font-size: 0.95rem;
+}
 
 .booking-form label:first-child {
     display: inline-block;  /* Endast 'inline' ignoreras av margin-top och margin-bottom */
@@ -443,54 +461,148 @@ form {
 
 .booking-form ::placeholder {
     padding-left: 0.5rem;
+    color: #aaa;
 }
 
 .booking-form :where(.recurring-frequency__options, .recurring-trip__options) input {
     display: inline-block;
     width: auto;
+    margin: 0;
+}
+
+.booking-form fieldset {
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-m);
+    padding: 1.25rem;
+    margin: 0;
+    padding-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.booking-form legend {
+    font-weight: 600;
+    color: var(--clr-black);
+    padding: 0 0.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.booking-form legend span {
+    color: var(--clr-red);
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+.recurring-trip__options {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.recurring-trip__options input[type="radio"],
+.recurring-frequency__options input[type="radio"],
+.special-needs input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.recurring-trip__options label,
+.recurring-frequency__options label,
+.special-needs label {
+    font-weight: 400;
+    color: var(--clr-darkgrey);
+    cursor: pointer;
+    margin-left: 0.5rem;
 }
 
 .recurring-frequency__options {
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
+    padding-left: 1.5rem;
+}
+
+.recurring-frequency__options div {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
 }
 
+.special-needs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.special-needs div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 .book-trip-buttons {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .book-trip-buttons button {
     flex: 1;
-    /* width: 100%; */
 }
 
 .book-cancel-btn,
 .book-confirm-btn {
     border-radius: var(--radius-m);
     height: 55px;
-    width: 50%;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+    border: var(--button-border) solid;
 }
 
 .book-cancel-btn {
     color: var(--clr-black);
-    border: var(--button-border) var(--clr-black) solid;
+    border-color: var(--clr-black);
     background-color: transparent;
+}
+
+.book-cancel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .book-confirm-btn {
     color: var(--clr-white);
     background-color: var(--clr-blue);
-    border: var(--button-border) solid var(--clr-blue);
+    border-color: var(--clr-blue);
 }
+
+.book-confirm-btn:hover {
+    background-color: rgb(0, 59, 196);
+}
+
+.booking-form input[readonly] {
+    background-color: #f5f5f5;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* .booking-form input:invalid:not(:focus):not(:placeholder-shown),
+.booking-form textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--clr-red);
+}
+
+.booking-form input:valid:not(:focus):not(:placeholder-shown),
+.booking-form textarea:valid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--clr-green);
+} */
 
 /*** Klar ***/
 
@@ -728,6 +840,11 @@ footer div > :not(:last-child) {
     .book-trip-buttons button {
         flex: none;
     }
+    .recurring-trip__options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
 
     /*** Mina Bokningar ***/
 
@@ -795,6 +912,13 @@ footer div > :not(:last-child) {
         padding: 1.4rem;
     }
 
+    .booking-form fieldset {
+        padding: 1rem;
+    }
+
+    .booking-form legend {
+        font-size: 0.9rem;
+    }
 
     /*** Mina Bokningar ***/
     .bookings {
