@@ -521,7 +521,6 @@ form {
 .recurring-frequency__options label,
 .special-needs label {
     font-weight: 400;
-    color: var(--clr-darkgrey);
     cursor: pointer;
     margin-left: 0.5rem;
 }
